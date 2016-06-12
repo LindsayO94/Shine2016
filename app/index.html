@@ -21,7 +21,7 @@
   <div ng-controller="menuCtrl as menuC" data-role="page" id="pageone">
     <div data-role="main" class="ui-content">
       <button ng-hide="menuC.menuActive()" ng-click="menuC.setTab(menuC.getPrevious())">&#9664</button>
-      <p style="text-align:center;"><img src="img/assets/logo.png" alt="Shine 2016"></p>
+      <p style="text-align:center;"><img src="/app/img/assets/logo.png" alt="Shine 2016"></p>
     </div>
     <div ng-show="menuC.menuActive()">
       <ul data-role="listview">
@@ -40,7 +40,7 @@
       <h3>Big Blue, the organizers of BUST, The Melee Games, New Game Plus, and Smash on the Hill, present a new major Smash tournament series, Shine!</h3>
       <h3>Featured games include Smash 64, Melee, and Wii U, with Singles and Doubles brackets for each.</h3>
       <h3>In addition, we are running a Pokken Tournament bracket, and an open 5v5 crew battle bracket for Melee and Wii U! Sign up with your friends and represent your crew at this very unique event!</h3>
-      <img src="/img/assets/bg_logo.png">
+      <img src="/app/img/assets/bg_logo.png">
     </div>
 
     <div ng-show="menuC.checkTab('Address')">
@@ -51,8 +51,8 @@
     </div>
 
     <div ng-show="menuC.checkTab('Venue')">
-      <p style="text-align:center;"><img src="/img/assets/map.png" style="width:20em; height:12em;"></p>
-      <p style="text-align:center;"><a href="./img/assets/map.pdf" download>Download a PDF version</a></p>
+      <p style="text-align:center;"><img src="/app/img/assets/map.png" style="width:20em; height:12em;"></p>
+      <p style="text-align:center;"><a href="/app/img/assets/map.pdf" download>Download a PDF version</a></p>
     </div>
 
     <div ng-show="menuC.checkTab('Pools')">
@@ -85,7 +85,7 @@
     </div>
 
     <div ng-show="menuC.checkTab('StreamSchedule')">
-      <p style="text-align:center;"><img src="/img/assets/commentary.png" style="width:26em; height:8em;"></p>
+      <p style="text-align:center;"><img src="/app/img/assets/commentary.png" style="width:26em; height:8em;"></p>
     </div>
   </div>
 
