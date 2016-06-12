@@ -84,6 +84,99 @@
       <h3 ng-repeat="player in menuC.selected4Pool.players">{{player.tag}}</h3>
     </div>
 
+    <div ng-show="menuC.checkTab('EventSchedule')">
+      <h2 style="text-align: center">Saturday</h2>
+      <table>
+        <tr>
+          <th>Time</th>
+          <th>Melee</th>
+          <th>Smash4</th>
+          <th>Smash 64</th>
+          <th>Pokken</th>
+        </tr>
+        <tr>
+          <td>9:00</td>
+          <td>Sign-in</td>
+          <td>Sign-in</td>
+          <td>Sign-in</td>
+          <td>Sign-in</td>
+        </tr>
+        <tr>
+          <td>10:00</td>
+          <td>Wave 1 Singles</td>
+          <td>Wave 1 Doubles</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>11:00</td>
+          <td>Wave 2 Singles</td>
+          <td>Wave 2 Doubles</td>
+          <td>Wave 1 Singles</td>
+          <td>Bracket begins</td>
+        </tr>
+        <tr>
+          <td>12:00</td>
+          <td>Wave 1 Doubles</td>
+          <td>Wave 1 Singles</td>
+          <td>Wave 2 Singles</td>
+          <td>Top 64 cont.</td>
+        </tr>
+        <tr>
+          <td>1:00</td>
+          <td>Wave 2 Doubles</td>
+          <td>Wave 2 Singles</td>
+          <td>Top 64</td>
+          <td>Top 16</td>
+        </tr>
+      </table>
+      <h2 style="text-align: center">Sunday</h2>
+      <table>
+        <tr>
+          <th>Time</th>
+          <th>Melee</th>
+          <th>Smash4</th>
+          <th>Smash 64</th>
+          <th>Pokken</th>
+        </tr>
+        <tr>
+          <td>9:00</td>
+          <td>Sign-in</td>
+          <td>Sign-in</td>
+          <td>Sign-in</td>
+          <td>Sign-in</td>
+        </tr>
+        <tr>
+          <td>10:00</td>
+          <td>Wave 1 Singles</td>
+          <td>Wave 1 Doubles</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>11:00</td>
+          <td>Wave 2 Singles</td>
+          <td>Wave 2 Doubles</td>
+          <td>Wave 1 Singles</td>
+          <td>Bracket begins</td>
+        </tr>
+        <tr>
+          <td>12:00</td>
+          <td>Wave 1 Doubles</td>
+          <td>Wave 1 Singles</td>
+          <td>Wave 2 Singles</td>
+          <td>Top 64 cont.</td>
+        </tr>
+        <tr>
+          <td>1:00</td>
+          <td>Wave 2 Doubles</td>
+          <td>Wave 2 Singles</td>
+          <td>Top 64</td>
+          <td>Top 16</td>
+        </tr>
+      </table>
+    </div>
+
     <div ng-show="menuC.checkTab('StreamSchedule')">
       <p style="text-align:center;"><img src="/app/img/assets/Commentary.png" style="width:26em; height:8em;"></p>
     </div>
