@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="shine" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="shine" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="shine" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="shine" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Shine 2016</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="jquery.mobile-1.4.5.min.css">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
+  <link rel="stylesheet" href="app.css">
+  <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+<body>
+  <div ng-controller="menuCtrl as menuC" data-role="page" id="pageone">
+    <div data-role="main" class="ui-content">
+      <button ng-hide="menuC.menuActive()" ng-click="menuC.setTab(menuC.getPrevious())">&#9664</button>
+      <p style="text-align:center;"><img src="img/assets/logo.png" alt="Shine 2016"></p>
+    </div>
+    <div ng-show="menuC.menuActive()">
+      <ul data-role="listview">
+        <li><a href ng-click="menuC.setInactive(); menuC.setTab('About');menuC.setPrevious('Menu')">About</a></li>
+        <li><a href ng-click="menuC.setInactive(); menuC.setTab('Address');menuC.setPrevious('Menu')">Address & Directions</a></li>
+        <li><a href ng-click="menuC.setInactive(); menuC.setTab('Venue');menuC.setPrevious('Menu')">Venue Map</a></li>
+        <li><a href ng-click="menuC.setInactive(); menuC.setTab('Pools');menuC.setPrevious('Menu')">Pool Information</a></li>
+        <li><a href ng-click="menuC.setInactive(); menuC.setTab('EventSchedule');menuC.setPrevious('Menu')">Event Schedule</a></li>
+        <li><a href ng-click="menuC.setInactive(); menuC.setTab('StreamSchedule');menuC.setPrevious('Menu')">Commentary/Stream Schedule</a></li>
+        <li><a href ng-click="menuC.setInactive(); menuC.setTab('StreamInfo');menuC.setPrevious('Menu')">Stream Information</a></li>
+        <li><a href ng-click="menuC.setInactive(); menuC.setTab('Help');menuC.setPrevious('Menu')">Need help?</a></li>
+      </ul>
+    </div>
+
+    <div ng-show="menuC.checkTab('About')" class="text-paragraph">
+      <h3>Big Blue, the organizers of BUST, The Melee Games, New Game Plus, and Smash on the Hill, present a new major Smash tournament series, Shine!</h3>
+      <h3>Featured games include Smash 64, Melee, and Wii U, with Singles and Doubles brackets for each.</h3>
+      <h3>In addition, we are running a Pokken Tournament bracket, and an open 5v5 crew battle bracket for Melee and Wii U! Sign up with your friends and represent your crew at this very unique event!</h3>
+      <img src="/img/assets/bg_logo.png">
+    </div>
+
+    <div ng-show="menuC.checkTab('Address')">
+      <h3>Seaport Hotel & World Trade Center</h3>
+      <h4>One Seaport Lane </h4>
+      <h4>Boston, Massachusetts 02210</h4>
+      <p style="text-align:center;"><iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d94357.92769655594!2d-71.1114248714024!3d42.34923368691185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x89e37a827728e8ad%3A0x9adcb4b06befe090!2sSeaport+Hotel+%26+World+Trade+Center%2C+1+Seaport+Lane%2C+Boston%2C+MA+02210!3m2!1d42.349255!2d-71.04138499999999!5e0!3m2!1sen!2sus!4v1465689884946" width="300" height="200" frameborder="0" style="border:0" allowfullscreen></iframe></p>
+    </div>
+
+    <div ng-show="menuC.checkTab('Venue')">
+      <p style="text-align:center;"><img src="/img/assets/map.png" style="width:20em; height:12em;"></p>
+      <p style="text-align:center;"><a href="./img/assets/map.pdf" download>Download a PDF version</a></p>
+    </div>
+
+    <div ng-show="menuC.checkTab('Pools')">
+      <ul data-role="listview">
+        <li><a href ng-click="menuC.setInactive(); menuC.setTab('MeleePools');menuC.setPrevious('Pools')">Melee</a></li>
+        <li><a href ng-click="menuC.setInactive(); menuC.setTab('Smash4Pools');menuC.setPrevious('Pools')">Smash 4</a></li>
+      </ul>
+    </div>
+
+    <div ng-show="menuC.checkTab('MeleePools')">
+      <select ng-model="menuC.selectedMPool" ng-options="pool.name for pool in menuC.meleePools">
+      </select>
+      <h3>Pool: {{menuC.selectedMPool.name}}</h3>
+      <h3>Location: {{menuC.selectedMPool.location}}</h3>
+      <h3>Wave: {{menuC.selectedMPool.wave}}</h3>
+      <h3>Time: {{menuC.selectedMPool.time}}</h3>
+      <h2>Player List:</h2>
+      <h3 ng-repeat="player in menuC.selectedMPool.players">{{player.tag}}</h3>
+    </div>
+
+    <div ng-show="menuC.checkTab('Smash4Pools')">
+      <select ng-model="menuC.selected4Pool" ng-options="pool.name for pool in menuC.smash4Pools">
+      </select>
+      <h3>Pool: {{menuC.selected4Pool.name}}</h3>
+      <h3>Location: {{menuC.selected4Pool.location}}</h3>
+      <h3>Wave: {{menuC.selected4Pool.wave}}</h3>
+      <h3>Time: {{menuC.selected4Pool.time}}</h3>
+      <h2>Player List:</h2>
+      <h3 ng-repeat="player in menuC.selected4Pool.players">{{player.tag}}</h3>
+    </div>
+
+    <div ng-show="menuC.checkTab('StreamSchedule')">
+      <p style="text-align:center;"><img src="/img/assets/commentary.png" style="width:26em; height:8em;"></p>
+    </div>
+  </div>
+
+
+  <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+
+  <div ng-view></div>
+
+  <!-- In production use:
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+  -->
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="app.js"></script>
+  <script src="components/version/version.js"></script>
+  <script src="components/version/version-directive.js"></script>
+  <script src="components/version/interpolate-filter.js"></script>
+</body>
+</html>
